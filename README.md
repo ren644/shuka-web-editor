@@ -35,15 +35,17 @@
 
 以支持 `.skill` 的本地 Agent 为例。Kimi Agent 已实测，其他 Agent 可能需要调整安装目录和浏览器工具。
 
-### 最省事：让 Agent 帮你安装
+### 最省事：把链接和指令发给 Agent
 
-把下载的 `.skill` 文件和下面这句话一起发给 Agent：
+**不用先手动下载文件。**把下面这段指令和文档链接一起发给 Agent：
 
 ```text
-帮我把这个 Skill 安装好，然后按默认原文成卡，把这篇文档直接生成并导出卡片成品，同时保留可编辑任务包：【粘贴文档链接】
+请从下面地址下载 shuka-web-editor.skill 并安装到当前 Agent，然后按默认原文成卡，把这篇文档直接生成并导出卡片成品，同时保留可编辑任务包，方便我之后修改：
+Skill 下载地址：https://github.com/ren644/shuka-web-editor/releases/latest/download/shuka-web-editor.skill
+文档地址：【粘贴文档链接】
 ```
 
-这只是 Agent 在本地解压并安装文件，**不需要额外安装工程，也不需要分别为 Mac 和 Windows 适配。**如果你的 Agent 不支持这种方式，再用下面的命令行。
+Agent 会按公开链接自行下载并安装。**不需要额外安装工程，也不需要分别为 Mac 和 Windows 适配。**如果你的 Agent 不支持这种方式，再用下面的命令行。
 
 ### Kimi Agent 命令行安装示例
 
