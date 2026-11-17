@@ -1,0 +1,10 @@
+{
+  "jobId": "example-original-v1",
+  "mode": "original",
+  "theme": "day",
+  "nickname": "薯卡用户",
+  "watermark": "Created with 薯卡",
+  "textLayout": { "whitespace": "preserve" },
+  "content": "这是原文成卡示例。\n\n原文的顺序和换行会保留。\n\n[page]\n\n[page] 或 [分页] 可以从这里开始一张新卡片，标记本身不会显示。",
+  "assets": { "images": [], "videos": [] }
+}

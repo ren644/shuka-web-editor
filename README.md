@@ -22,8 +22,11 @@
 
 ## 下载
 
-- [下载最新 shuka-web-editor.skill](https://github.com/ren644/shuka-web-editor/releases/latest/download/shuka-web-editor.skill)
-- [下载示例任务包](https://github.com/ren644/shuka-web-editor/releases/latest/download/shuka-job-demo.zip)
+**第一次使用，直接下载一个新手包即可，不需要分辨不同文件。**
+
+- [下载新手体验包（推荐）](https://github.com/ren644/shuka-web-editor/releases/latest/download/shuka-web-editor-starter.zip)：包含 Skill、示例任务包、两种任务单示例和一页中文使用说明
+- [只下载 shuka-web-editor.skill](https://github.com/ren644/shuka-web-editor/releases/latest/download/shuka-web-editor.skill)
+- [只下载示例任务包](https://github.com/ren644/shuka-web-editor/releases/latest/download/shuka-job-demo.zip)
 - [打开薯卡网站](https://jinsan.ok.kimi.link/)
 
 ## 安装
@@ -31,6 +34,8 @@
 以支持 `.skill` 的本地 Agent 为例。Kimi Agent 已实测，其他 Agent 可能需要调整安装目录和浏览器工具。
 
 ### Kimi Agent 安装示例
+
+如果下载的是新手包，先解压，找到其中的 `shuka-web-editor.skill`；示例任务包也在同一目录，可直接导入网站体验。
 
 把 `.skill` 文件解压到技能目录：
 
