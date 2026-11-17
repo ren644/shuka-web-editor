@@ -68,8 +68,9 @@ curl -s -X POST "http://localhost:3456/setFiles?target=TARGET_ID" \
 只有用户明确要求先编辑时才跳过本步骤。
 
 1. 在导出前记录 Unix 时间戳，例如 `date +%s`。
-2. 通过 CDP `/eval` 点击页面上的「导出卡片」或「导出实况图文」按钮，不点击任何小红书发布按钮。
-3. 等待浏览器完成下载，然后运行：
+2. 如果页面出现「示例名片」提示或导出确认，先让用户修改头像、昵称和水印，或由用户明确选择保留；不得绕过确认直接导出。确认状态只保存在当前浏览器，用户修改后不应反复打断。
+3. 通过 CDP `/eval` 点击页面上的「导出卡片」或「导出实况图文」按钮，不点击任何小红书发布按钮。
+4. 等待浏览器完成下载，然后运行：
 
    ```bash
    python scripts/collect_export.py \
@@ -79,7 +80,7 @@ curl -s -X POST "http://localhost:3456/setFiles?target=TARGET_ID" \
 
    脚本会在「下载」和「桌面」中查找本次 `xhs-card-*.png/.livp/.mp4` 或 `xhs-cards-*.zip`，校验后复制到结果目录。
 
-4. 向用户交付：
+5. 向用户交付：
    - 实际生成的 PNG、ZIP、实况或 MP4 路径与页数；
    - 可编辑备份 `shuka-job.zip`，并说明「不满意时可导入网站修改，不是必须编辑」。
 
