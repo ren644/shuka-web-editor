@@ -171,6 +171,7 @@ unzip shuka-web-editor.skill -d ~/.agents/skills/
 - 字段说明：[shuka-web-editor/references/api_reference.md](shuka-web-editor/references/api_reference.md)
 - 原文示例：[examples/original/job.json](examples/original/job.json)
 - AI 主编示例：[examples/ai-editor/job.json](examples/ai-editor/job.json)
+- 续改示例（改一页、加一页，其余不动）：[examples/continue-edit/job.json](examples/continue-edit/job.json)
 - 可导入网站的示例：[examples/shuka-job-demo.zip](examples/shuka-job-demo.zip)
 
 手动打包：

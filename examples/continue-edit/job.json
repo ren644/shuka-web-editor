@@ -1,0 +1,28 @@
+{
+  "jobId": "example-ai-editor-v2",
+  "mode": "ai_editor",
+  "theme": "day",
+  "nickname": "薯卡用户",
+  "watermark": "Created with 薯卡",
+  "pages": [
+    {
+      "id": "p1",
+      "layout": "cover",
+      "text": "这是 AI 主编封面\n\n每页都有稳定的页面 ID",
+      "media": []
+    },
+    {
+      "id": "p2",
+      "layout": "text",
+      "text": "第 2 页是这次唯一改过的页面。\n\n==其他页面保持上一版原样。==",
+      "media": []
+    },
+    {
+      "id": "p3",
+      "layout": "text",
+      "text": "第 3 页是新增的页面，接在原有内容后面。",
+      "media": []
+    }
+  ],
+  "assets": { "images": [], "videos": [] }
+}

@@ -58,4 +58,5 @@ ZIP 根目录必须有 `job.json`，素材使用相对路径。不要把 `output
 - 视频使用 `type=video`，素材路径位于 `assets.videos`。
 - `liveTarget` 可选 `apple` / `android`，`liveSeconds` 可选 1–30。
 - `note_title` 最多 20 字，`note_content` 最多 1000 字。
-- 修改时更换 `jobId`，保持未修改页面的 ID 和内容。
+- 任务包（含素材）不能超过 250 MB，超过会被网站拒绝。
+- 修改时更换 `jobId`，保持未修改页面的 ID 和内容。续改示例见 [examples/continue-edit/job.json](examples/continue-edit/job.json)。
