@@ -133,7 +133,7 @@ unzip shuka-web-editor.skill -d ~/.agents/skills/
 |---|---|
 | 飞书文档 | 需要相应文档读取能力与权限 |
 | Word `.docx` | 支持正文与内嵌图片 |
-| Markdown `.md` | 本地图片放在任务目录内，远程图片先下载 |
+| Markdown `.md` | 本地图片放在任务目录内，远程图片先用 `scripts/fetch_remote_assets.py` 下载 |
 | TXT `.txt` | 直接读取 UTF-8 文本 |
 | 直接文字 + 图片/视频 | 一等输入，不必先建文档 |
 | 网页、公众号文章 | 先读取正文与原图，再生成任务包 |
@@ -175,7 +175,7 @@ python3 shuka-web-editor/scripts/pack_job.py \
   --output /absolute/path/to/shuka-job.zip
 ```
 
-只依赖 Python 3 标准库。
+只依赖 Python 3 标准库。打包前会校验素材引用、重复 id 和字段取值，引用缺失或取值非法会直接报错；远程素材先用 `scripts/fetch_remote_assets.py` 下载到任务目录。
 
 ## 隐私与数据边界
 

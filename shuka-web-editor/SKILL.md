@@ -30,6 +30,14 @@ my-job/
 
 原文模式使用 `content` 或 `sourceFile`；AI 主编使用带稳定 ID 的 `pages`。直接粘贴图文时，在原文位置插入 `[img1]`、`[视频1]`。需要手动分页时插入独立行 `[page]` 或 `[分页]`。
 
+远程图片或视频先用脚本下载到任务目录并重写路径：
+
+```bash
+python scripts/fetch_remote_assets.py --job /absolute/path/to/job.json
+```
+
+脚本会把 `assets` 中的 http(s) 地址下载到任务目录并把 `job.json` 改成本地相对路径；Markdown 源文件中的远程图片会改写进 `<文件名>.local.md` 副本，原文件不动。下载失败会明确报错，不生成半成品任务单。
+
 换行选项：
 
 - `textLayout.whitespace=preserve`：默认保留。
@@ -43,6 +51,8 @@ python scripts/pack_job.py --job /absolute/path/to/job.json --output /absolute/p
 ```
 
 包内只包含 `job.json` 和所需源素材，不包含飞书授权、Cookie、模型密钥或历史导出结果。这个包用于网站编辑备份，**不是最终卡片成品，不要把 `shuka-job.zip` 当成卡片 ZIP 交付。**
+
+打包前会校验任务单：引用的素材 id 必须已声明、素材 id 不得重复、`theme` / `layout` / `whitespace` / `liveTarget` / `liveSeconds` / `note_title` / `note_content` 取值合法，校验不过会直接报错退出。已声明但未被引用的素材只提示，不阻断。
 
 ## 4. 导入网站并验证
 
@@ -78,7 +88,7 @@ curl -s -X POST "http://localhost:3456/setFiles?target=TARGET_ID" \
      --output /absolute/path/to/final-output
    ```
 
-   脚本会在「下载」和「桌面」中查找本次 `xhs-card-*.png/.livp/.mp4` 或 `xhs-cards-*.zip`，校验后复制到结果目录。
+   脚本会在「下载」和「桌面」中查找本次 `xhs-card-*.png/.livp/.mp4` 或 `xhs-cards-*.zip`，校验后复制到结果目录。一次导出同时产生 PNG 和 ZIP 时会全部收集；每个文件都会做 PNG/JPG 魔数、最小尺寸和 ZIP 完整性校验，校验不过会明确报错，不会静默放过。找不到文件时会默认等待 10 秒让浏览器完成下载。
 
 5. 向用户交付：
    - 实际生成的 PNG、ZIP、实况或 MP4 路径与页数；
