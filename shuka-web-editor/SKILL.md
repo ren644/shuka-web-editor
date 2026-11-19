@@ -44,6 +44,14 @@ python scripts/fetch_remote_assets.py --job /absolute/path/to/job.json
 - `single-blank-line`：最多一个连续空行。
 - `compact`：合并连续空行。
 
+## 实况与笔记（可选字段）
+
+- `liveTarget`：`apple`（苹果实况，默认）或 `android`（Motion Photo）。
+- `liveSeconds`：1–30，默认 3。**3 秒以内导出真正的实况**；苹果目标需要 Mac 实况助手才能自动写入「照片」，助手未安装时网站会引导安装，Agent 不自动安装或授权。**超过 3 秒导出的是 MP4 视频**，需要用户自行转实况。用户说要实况但给出的时长超过 3 秒时，先提醒他这个分界，由用户决定缩短还是接受 MP4。
+- `note_title`（最多 20 字）和 `note_content`（最多 1000 字）：随任务带出的笔记标题与正文。
+
+交付实况任务时，按导出结果如实说明实况份数和 MP4 份数，不把 MP4 称为实况。
+
 ## 3. 打包为可编辑任务包
 
 ```bash
