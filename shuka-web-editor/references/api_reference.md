@@ -53,7 +53,7 @@ ZIP 根目录必须有 `job.json`，素材使用相对路径。不要把 `output
 }
 ```
 
-- `theme`：`day`、`night`、`x`。
+- `theme`：`day`、`night`、`x`、`focus`。`focus` 为「重点高亮」预设，沿用日间配色，并自动将小标题加粗、提示句黄色高亮，不改写正文。
 - `layout`：`cover`、`text`、`image`、`video`、`mixed`、`summary`。
 - 视频使用 `type=video`，素材路径位于 `assets.videos`。
 - `liveTarget` 可选 `apple` / `android`，`liveSeconds` 可选 1–30。
